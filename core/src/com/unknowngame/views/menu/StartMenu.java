@@ -1,6 +1,5 @@
-package com.unknowngame.menu;
+package com.unknowngame.views.menu;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.unknowngame.utils.Consts;
@@ -12,9 +11,9 @@ public class StartMenu extends Screen {
     private Texture title;
 
     public StartMenu() {
-        sky = new Texture(Gdx.files.internal("imgs/start_menu/sky.png"));
-        earth = new Texture(Gdx.files.internal("imgs/start_menu/earth.png"));
-        clouds = new Texture(Gdx.files.internal("imgs/start_menu/clouds.png"));
+        sky = new Texture(fileService.findTexture("imgs/start_menu/sky"));
+        earth = new Texture(fileService.findTexture("imgs/start_menu/earth"));
+        clouds = new Texture(fileService.findTexture("imgs/start_menu/clouds"));
     }
 
     @Override

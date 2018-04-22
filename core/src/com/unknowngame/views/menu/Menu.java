@@ -1,4 +1,4 @@
-package com.unknowngame.menu;
+package com.unknowngame.views.menu;
 
 public enum Menu {
     START_MENU(new StartMenu());

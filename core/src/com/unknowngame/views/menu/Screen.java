@@ -1,12 +1,16 @@
-package com.unknowngame.menu;
+package com.unknowngame.views.menu;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector3;
+import com.unknowngame.services.FileService;
+import com.unknowngame.services.FileServiceFactory;
 
 public abstract class Screen {
     protected OrthographicCamera camera;
     protected Vector3 cursor;
+    FileService fileService = FileServiceFactory.getFileService();
+
 
     public Screen() {
         camera = new OrthographicCamera();

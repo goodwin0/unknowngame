@@ -1,10 +1,4 @@
-package com.unknowngame.menu;
-
-import com.badlogic.gdx.utils.Array;
-
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+package com.unknowngame.views.menu;
 
 public class ScreenManager {
     public Screen activeScreen;
