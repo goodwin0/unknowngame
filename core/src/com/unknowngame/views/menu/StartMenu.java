@@ -15,7 +15,6 @@ public class StartMenu extends GameScreen {
     private Texture earth;
     private Texture title;
     private Array<Cloud> clouds;
-    private Random random = new Random();
 
     public StartMenu() {
         sky = new Texture(fileService.findTexture("imgs/start_menu/sky"));
@@ -26,8 +25,8 @@ public class StartMenu extends GameScreen {
     private void createClouds() {
         clouds = new Array<>();
         for (int i = 0; i <= 3; i++) {
-            Cloud cloud = new Cloud(new Vector2(i * Cloud.CLOUD_WIDTH, Consts.SCREEN_HEIGHT - Cloud.CLOUD_HEIGHT - random.nextInt(60)),
-                    new Vector2(-0.5f, 0));
+            Cloud cloud = new Cloud(new Vector2(i * Cloud.CLOUD_WIDTH, Consts.SCREEN_HEIGHT - 200 - new Random().nextInt(80)),
+                    new Vector2(-40, 0));
             clouds.add(cloud);
         }
     }
@@ -67,7 +66,6 @@ public class StartMenu extends GameScreen {
         private Vector2 position;
         private Vector2 velocity;
         private static Texture cloudTexture = new Texture(fileService.findTexture("imgs/start_menu/cloud"));
-        private Random random = new Random();
 
         private Cloud(Vector2 position, Vector2 velocity) {
             this.position = position;
@@ -75,10 +73,12 @@ public class StartMenu extends GameScreen {
         }
 
         private void update() {
+            velocity.scl(Gdx.graphics.getDeltaTime());
             position.add(velocity);
+            velocity.scl(1 / Gdx.graphics.getDeltaTime());
 
             if (position.x < -CLOUD_WIDTH) {
-                position.x = Gdx.graphics.getWidth() + random.nextInt(100);
+                position.x = Gdx.graphics.getWidth() + new Random().nextInt(80);
             }
             if (position.y > Gdx.graphics.getHeight()) {
                 position.y = Gdx.graphics.getHeight() - CLOUD_HEIGHT;
