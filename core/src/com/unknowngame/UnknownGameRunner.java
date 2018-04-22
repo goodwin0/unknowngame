@@ -15,7 +15,7 @@ public class UnknownGameRunner extends ApplicationAdapter {
 	public void create () {
 		batch = new SpriteBatch();
 		screenManager = new ScreenManager();
-		screenManager.setActiveScreen(Menu.START_MENU.getScreen());
+		screenManager.setActiveGameScreen(Menu.START_MENU.getGameScreen());
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 
 	}
@@ -23,7 +23,7 @@ public class UnknownGameRunner extends ApplicationAdapter {
 	@Override
 	public void render () {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		screenManager.getActiveScreen().render(batch);
+		screenManager.getActiveGameScreen().render(batch);
 
 	}
 	

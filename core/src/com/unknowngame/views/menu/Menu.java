@@ -3,12 +3,12 @@ package com.unknowngame.views.menu;
 public enum Menu {
     START_MENU(new StartMenu());
 
-    private Screen screen;
-    Menu(Screen screen) {
-        this.screen = screen;
+    private GameScreen gameScreen;
+    Menu(GameScreen gameScreen) {
+        this.gameScreen = gameScreen;
     }
 
-    public Screen getScreen() {
-        return screen;
+    public GameScreen getGameScreen() {
+        return gameScreen;
     }
 }

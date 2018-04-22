@@ -1,17 +1,17 @@
 package com.unknowngame.views.menu;
 
 public class ScreenManager {
-    public Screen activeScreen;
+    public GameScreen activeGameScreen;
 
     public ScreenManager() {
     }
 
-    public Screen getActiveScreen() {
-        return activeScreen;
+    public GameScreen getActiveGameScreen() {
+        return activeGameScreen;
     }
 
-    public void setActiveScreen(Screen activeScreen) {
+    public void setActiveGameScreen(GameScreen activeGameScreen) {
 
-        this.activeScreen = activeScreen;
+        this.activeGameScreen = activeGameScreen;
     }
 }

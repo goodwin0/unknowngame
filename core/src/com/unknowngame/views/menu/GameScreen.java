@@ -6,13 +6,13 @@ import com.badlogic.gdx.math.Vector3;
 import com.unknowngame.services.FileService;
 import com.unknowngame.services.FileServiceFactory;
 
-public abstract class Screen {
+public abstract class GameScreen {
     protected OrthographicCamera camera;
     protected Vector3 cursor;
-    FileService fileService = FileServiceFactory.getFileService();
+    public static FileService fileService = FileServiceFactory.getFileService();
 
 
-    public Screen() {
+    public GameScreen() {
         camera = new OrthographicCamera();
         cursor = new Vector3();
     }
